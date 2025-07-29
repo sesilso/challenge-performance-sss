@@ -1,0 +1,7 @@
+Considerando el contexto de volumen de ventas por día y el aumento en fechas especiales, las pruebas principales serian:
+
+1. Pruebas de carga/Load Testing: Simular la carga regular (1500 usuarios) realizando compras simultaneamente para asegurar que el sistema mantenga tiempos de respuesta estables.
+
+2. Pruebas de estres/Stress Testing: Probar el sistema con carga mucho mayor ( > 7500 usuarios) para identificar puntos de fallo y asegurarse de que el sistema no colapse.
+
+3. Pruebas de performance en la BD: Medir la respuesta de la base de datos manejando un gran volumen de transacciones concurrentes.
