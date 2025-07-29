@@ -41,6 +41,6 @@ k6 run products-performance-test.js --out json=full-result.json
 ```bash
 node generate-report.js
 ``` 
-![performance_test_summary.html reference output example](reference\custom-report.png)
+![performance_test_summary.html reference output example](reference/custom-report.png)
 
 **Author:** Sergio Silva 
