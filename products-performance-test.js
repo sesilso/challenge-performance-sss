@@ -15,14 +15,14 @@ let token = '';
 function generateRandomProduct() {
   const adjectives = ['Amazing', 'Super', 'Fantastic', 'Incredible', 'Unique', 'Awesome', 'Deluxe', 'Premium', 'Genuine', 'Special'];
   const nouns = ['Product', 'Item', 'Gadget', 'Device', 'Accessory', 'Tool', 'Machine', 'Widget', 'Apparel', 'Gear'];
+  const uuid = Math.random().toString(36).substring(2, 15);
+  const title = `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${nouns[Math.floor(Math.random() * nouns.length)]} ${uuid}`;
+
+  const price = (Math.random() * (100 - 1) + 1).toFixed(2); 
   
-  const title = `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${nouns[Math.floor(Math.random() * nouns.length)]} ${Math.floor(Math.random() * 10000)}`;
-
-  const price = (Math.random() * (100 - 1) + 1).toFixed(2);  
-
   return {
     title: title,
-    price: parseFloat(price),
+    price: parseFloat(price) 
   };
 }
 

@@ -56,6 +56,7 @@ Object.keys(grouped).forEach(scenario => {
      <li><strong>Checks ejecutados:</strong> ${Array.from(checkData.names).join(', ')}</li>
       <li><strong>Exitosos:</strong> ${checkData.passed}</li>
       <li><strong>Fallidos:</strong> ${checkData.failed}</li>
+      <li><strong>Tasa:</strong> &asymp; ${((checkData.passed/(checkData.passed+checkData.failed))*100).toFixed(2)} %</li>
     </ul>`;
 
   htmlBody += `<h3>Resumen de métricas:</h3>
@@ -97,8 +98,8 @@ Object.keys(grouped).forEach(scenario => {
         <td>${stats.promedio.toFixed(2)}</td>
         <td>${stats.min.toFixed(2)}</td>
         <td>${stats.max.toFixed(2)}</td>
-        <td>${maxValue}</td>
-        <td>${conclusion}</td>
+        <td>[${maxValue}]</td>
+        <td style="color: ${conclusion === "No aceptable" ? "red" : "black"}">${conclusion}</td>
       </tr>`;
     }
   }
@@ -118,12 +119,12 @@ const finalHTML = `
     section { margin-bottom: 40px; }
     table { border-collapse: collapse; width: 100%; margin-top: 10px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-    th { background-color: #4CAF50; color: white; }
+    th { background-color: #9ec7de; color: black; }
     tr:nth-child(even) { background-color: #f2f2f2; }
   </style>
 </head>
 <body>
-  <h1>Reporte de Rendimiento por Escenario (K6)</h1>
+  <h1>Reporte Pruebas Performance - Resumen</h1>
   ${htmlBody}
 </body>
 </html>
