@@ -15,11 +15,11 @@ choco install k6
 # Configuration
 - Execution parameters are defined inside products-performance-test.js file and can be editted if needed. 
 ``` bash
-BASE_URL = 'https://dummyjson.com';
-USERNAME = 'emilys';
-PASSWORD = 'emilyspass';
-TPS_50_DURATION = '5s';
-TPS_100_DURATION = '5s';
+BASE_URL = {BASE_URL};
+USERNAME = {AUTH_USERNAME};
+PASSWORD = {AUTH_PASSWORD};
+TPS_50_DURATION = {50_TPS_DUR}; # 1m, 30s
+TPS_100_DURATION = {50_TPS_DUR}; # 1m, 30s
 ```
 
 - Report generation supports custom acceptable value for response metrics inside threslholdConfig.js file can be editted if needed.
