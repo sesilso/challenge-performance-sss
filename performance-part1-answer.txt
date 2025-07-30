@@ -1,7 +1,24 @@
 Considerando el contexto de volumen de ventas por día y el aumento en fechas especiales, las pruebas principales serian:
 
-1. Pruebas de carga/Load Testing: Simular la carga regular (1500 usuarios) realizando compras simultaneamente para asegurar que el sistema mantenga tiempos de respuesta estables.
+1. Pruebas de carga/Load Testing:
 
-2. Pruebas de estres/Stress Testing: Probar el sistema con carga mucho mayor ( > 7500 usuarios) para identificar puntos de fallo y asegurarse de que el sistema no colapse.
+Estrategia: Simular tráfico gradual hasta alcanzar las 1500 ventas diarias (o su equivalente en usuarios concurrentes)
 
-3. Pruebas de performance en la BD: Medir la respuesta de la base de datos manejando un gran volumen de transacciones concurrentes.
+Enfoque: Usar herramientas como JMeter o Gatling para generar solicitudes HTTP representativas de un usuario realizando una compra completa
+
+Objetivo: Verificar que los tiempos de respuesta se mantengan aceptables (por ejemplo, < 3 segundos) y que no haya errores bajo carga normal
+
+2. Pruebas de estres/Stress Testing:
+
+Estrategia: Incrementar la carga más allá del pico esperado, por ejemplo simular mas de 10000 ventas diarias
+
+Enfoque: Forzar el sistema hasta que fallen componentes para entender el punto critico
+
+Objetivo: Identificar límites y cómo el sistema maneja fallos (degradacion controlada, alertas, recuperación)
+
+3. Pruebas de performance en la BD:
+Estrategia: Evaluar el comportamiento de la base de datos bajo diferentes cargas (consultas, inserciones y actualizaciones concurrentes) que simulan las operaciones típicas de un e-commerce (como procesos de compra, actualización de inventario y gestión de usuarios)
+
+Enfoque: Usar herramientas como Apache JMeter con plugins específicos para bases de datos, o herramientas especializadas como HammerDB para simular transacciones concurrentes. 
+
+Objetivo: Detectar problemas de bloqueo o tiempos de respuesta elevados y garantizar que la base de datos soporte escenarios exigentes
